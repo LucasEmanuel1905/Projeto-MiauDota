@@ -52,6 +52,14 @@ header {
     transform: scale(1.1);
     border-radius: 5px;
 }
+.navegacao li a {
+    padding: 5px;
+    transition: transform 0.3s;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+
 
 .extras {
     display: flex;
