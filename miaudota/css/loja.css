@@ -134,6 +134,7 @@ main{
     flex-wrap: wrap;
     text-align: center;
     gap: 30px;
+    margin-bottom: 20px;
 }
 .produtos2 img{
      height: 300px;
@@ -151,5 +152,113 @@ main{
     position: absolute;
     top: 59.1%;
     right: 0;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    background: linear-gradient(to right, #682daa, #7f4db8, #8156b3, #8a5dbd, #9c77c7);
+    width: 100%;
+    padding-bottom: 3rem;
+}
+
+footer h2 {
+    color: white;
+    font-size: 2rem;
+}
+
+footer p {
+    color: white;
+    font-size: 1rem;
+}
+
+footer hr {
+    margin: 0 10rem;
+}
+
+.content {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 6rem;
+}
+
+.inf1 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: white;
+}
+
+.inf1 img {
+    width: 12rem;
+}
+
+.inf2 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.desc {
+    display: flex;
+    flex-direction: column;
+}
+
+.midia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.midia h4 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+
+}
+
+.midia a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+
+.social {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    gap: 5rem;
+}
+
+.social a {
+    transition: transform 0.3s;
+
+}
+
+.social a:hover {
+    transform: scale(1.2);
+    color: #ebebeb;
+    cursor: pointer;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.subfooter {
+    display: flex;
+    justify-content: center;
+    background-color: #562b88;
+}
+
+.subfooter p {
+    color: white;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 13px;
 }
