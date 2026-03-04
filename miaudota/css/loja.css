@@ -72,6 +72,9 @@ display: flex;
     color: #ebebeb;
     cursor: pointer;
 }
+main{
+    position: relative;
+}
 .produtos{
     display: flex;
     align-items: center;
@@ -138,4 +141,15 @@ display: flex;
 }
 .produtos2 p{
     margin: 12px 0px;
+}
+.dica img{
+    height: 400px;
+    width: auto;
+    
+}
+.dica{
+    position: absolute;
+    top: 59.1%;
+    right: 0;
+    margin-bottom: 0px;
 }
