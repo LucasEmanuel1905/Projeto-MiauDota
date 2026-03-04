@@ -85,7 +85,7 @@ header {
 }
 
 #banner {
-    background-image: url("../img/dreamina-2026-02-25-1274-In\ the\ area\ marked\ by\ the\ red\ box\,\ add\ t....png");
+    background-image: url("../img/21a05321-d0c2-40cf-9e72-02880154785e.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -234,7 +234,7 @@ footer hr {
 }
 
 .inf1 img {
-    width: 12rem;
+    width: 13rem;
 }
 
 .inf2 {
@@ -304,4 +304,24 @@ footer hr {
     font-size: 1rem;
     font-weight: 300;
     padding: 13px;
+}
+.container{
+    max-width: 550px;
+    min-width: 350px;
+}
+.carrocel{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1.2rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type:mandatory;
+
+}
+.cats{
+    background-color: #562b88;
+    min-height: 350px;
+    min-width: 450px;
+    scroll-snap-align:initial;
+    border-radius: 10px;
 }
