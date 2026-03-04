@@ -83,6 +83,8 @@ display: flex;
     flex-wrap: wrap;
     text-align: center;
     gap: 30px;
+    
+
 }
 .produtos img{
     height: 300px;
@@ -92,13 +94,33 @@ display: flex;
         background-color: #b676ff7c;
         box-shadow: 3px 3px 10px #8f62c2;
         margin-top: 35px;
+        padding-bottom: 1rem;
 }
-.torre p{
-    margin-bottom: 5px;
+.produtos p{
+    margin: 12px 0px;
 }
 .comprar{
     background-color: #8f62c2;
     border-radius: 7px;
     padding: 5px;
     text-decoration: none;
+}
+.escova{
+     background-color: #b676ff7c;
+        box-shadow: 3px 3px 10px #8f62c2;
+        margin-top: 35px;
+        padding-bottom: 1rem;
+}
+.pa{
+     background-color: #b676ff7c;
+        box-shadow: 3px 3px 10px #8f62c2;
+        margin-top: 35px;
+        padding-bottom: 1rem;
+}
+.pote{
+     background-color: #b676ff7c;
+        box-shadow: 3px 3px 10px #8f62c2;
+        margin-top: 35px;
+        padding-bottom: 1rem;
+        padding: 32px;
 }
