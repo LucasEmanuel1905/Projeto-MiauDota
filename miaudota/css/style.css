@@ -69,6 +69,7 @@ header {
     color: #ffffff;
     margin: 1rem;
     margin-top: 1rem;
+    
 
 }
 
@@ -82,6 +83,9 @@ header {
     transform: scale(1.2);
     color: #ebebeb;
     cursor: pointer;
+}
+.extras a{
+    color: #ebebeb;
 }
 
 #banner {

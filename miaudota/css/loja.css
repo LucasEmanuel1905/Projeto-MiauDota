@@ -72,6 +72,9 @@ display: flex;
     color: #ebebeb;
     cursor: pointer;
 }
+.extras a{
+    color: #ebebeb;
+}
 main{
     position: relative;
 }
