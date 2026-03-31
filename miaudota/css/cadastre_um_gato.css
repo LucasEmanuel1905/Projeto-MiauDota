@@ -75,6 +75,89 @@ display: flex;
 .extras a{
     color: #ebebeb;
 }
+
+.containerForm{
+    width: 1100px;
+    margin: auto;
+    padding: 40px;
+}
+
+.formAnimal{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* tipo anuncio */
+
+.tipoAnuncio{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* fotos */
+
+.boxFotos{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.fotoPrincipal,
+.galeriaFotos{
+    width: 50%;
+}
+
+.aviso{
+    color: #777;
+    font-size: 14px;
+}
+
+.limite{
+    font-size: 12px;
+    color: #999;
+}
+
+/* selects */
+
+.linhaSelect{
+    display: flex;
+    gap: 20px;
+}
+
+.campo{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+select,
+input{
+    padding: 10px;
+    border: 2px solid #ff8c00;
+    border-radius: 4px;
+}
+
+/* linha inputs */
+
+.linhaInputs{
+    display: flex;
+    gap: 20px;
+}
+
+/* contato */
+
+.linhaContato{
+    display: flex;
+    gap: 20px;
+}
+
+small{
+    font-size: 12px;
+    color: #777;
+}
+
 footer {
     display: flex;
     flex-direction: column;

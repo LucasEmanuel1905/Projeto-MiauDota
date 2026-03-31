@@ -34,7 +34,7 @@
 
 
     <main>
-    <nav>
+    <!-- <nav>
 
         <div>
             <h1>Tipo de anúncio</h1>
@@ -184,7 +184,111 @@
 <input type="text" id="nome_animal" name="nomeGato" required>
 </div>
 </div>
-    </nav>
+    </nav> -->
+
+<main class="containerForm">
+
+    <form class="formAnimal">
+
+        <!-- Tipo de anúncio -->
+        <div class="tipoAnuncio">
+            <h3>Tipo de Anúncio</h3>
+
+            <label>
+                <input type="radio" name="tipo">
+                Anúncio de Adoção
+            </label>
+
+            <label>
+                <input type="radio" name="tipo">
+                Anúncio de Procura-se
+            </label>
+        </div>
+
+
+        <!-- Fotos -->
+        <div class="boxFotos">
+
+            <div class="fotoPrincipal">
+                <h2>Foto Principal *</h2>
+                <p class="aviso">⚠ Não são aceitas imagens que contenham desenhos ou textos.</p>
+
+                <input type="file">
+            </div>
+
+
+            <div class="galeriaFotos">
+                <h2>Galeria de Fotos</h2>
+
+                <input type="file">
+
+                <p class="limite">Maximum file size: 3 MB</p>
+            </div>
+
+        </div>
+
+
+        <!-- Selects -->
+        <div class="linhaSelect">
+
+            <div class="campo">
+                <label>Espécie *</label>
+                <select>
+                    <option>Selecione a Espécie</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label>Sexo *</label>
+                <select>
+                    <option>Selecione o Sexo</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label>Faixa Etária *</label>
+                <select>
+                    <option>Selecione a Faixa Etária</option>
+                </select>
+            </div>
+            
+            <div class="campo">
+                <label>Porte *</label>
+                <select>
+                    <option>Selecione o Porte</option>
+                </select>
+            </div>
+        </div>
+        <hr>
+        <!-- Linha nome -->
+        <div class="linhaInputs">
+            <div class="campo">
+                <label>Nome do Animal *</label>
+                <input type="text">
+            </div>
+            <div class="campo">
+                <label>Idade</label>
+                <input type="text">
+            </div>
+            <div class="campo">
+                <label>Responsável *</label>
+                <input type="text">
+            </div>
+        </div>
+        <!-- Linha contato -->
+        <div class="linhaContato">
+            <div class="campo">
+                <label>E-mail do Responsável *</label>
+                <input type="email">
+            </div>
+            <div class="campo">
+                <label>Whatsapp do Responsável *</label>
+                <input type="text" placeholder="________">
+                <small>Ex: 11981110022 - Apenas os DDD e Números</small>
+            </div>
+        </div>
+
+    </form>
 </main>
 
 
