@@ -69,7 +69,7 @@ header {
     color: #ffffff;
     margin: 1rem;
     margin-top: 1rem;
-    
+
 
 }
 
@@ -84,12 +84,13 @@ header {
     color: #ebebeb;
     cursor: pointer;
 }
-.extras a{
+
+.extras a {
     color: #ebebeb;
 }
 
 #banner {
-    background-image: url("../img/21a05321-d0c2-40cf-9e72-02880154785e.png");
+    background-image: url("../img/dreamina-2026-04-01-3249-A\ beautiful\ short-haired\ cat\ with\ green\ ....jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -145,12 +146,10 @@ header {
     text-decoration: none;
     background: linear-gradient(#a75aff);
     padding: 7px;
+    padding: 7px 8.1rem;
     color: rgb(255, 255, 255);
-
     font-size: 14px;
     border-radius: 8px;
-    padding-left: 89px;
-    padding-right: 89px;
     transition: transform 0.5s;
 
 }
@@ -158,13 +157,11 @@ header {
 .buttonA:hover {
     text-decoration: none;
     background: white;
-    padding: 7px;
     color: #a75aff;
-
+    padding: 7px;
+    padding: 7px 8.1rem;
     font-size: 14px;
     border-radius: 8px;
-    padding-left: 89px;
-    padding-right: 89px;
     transform: scale(0.9);
 
 
@@ -309,23 +306,26 @@ footer hr {
     font-weight: 300;
     padding: 13px;
 }
-.container{
+
+.container {
     max-width: 550px;
     min-width: 350px;
 }
-.carrocel{
+
+.carrocel {
     display: grid;
     grid-auto-flow: column;
     gap: 1.2rem;
     overflow-x: auto;
     overscroll-behavior-x: contain;
-    scroll-snap-type:mandatory;
+    scroll-snap-type: mandatory;
 
 }
-.cats{
+
+.cats {
     background-color: #562b88;
     min-height: 350px;
     min-width: 450px;
-    scroll-snap-align:initial;
+    scroll-snap-align: initial;
     border-radius: 10px;
 }
