@@ -208,12 +208,12 @@
 
         <!-- Fotos -->
         <div class="boxFotos">
+            
 
             <div class="fotoPrincipal">
                 <h2>Foto Principal *</h2>
-                <p class="aviso">⚠ Não são aceitas imagens que contenham desenhos ou textos.</p>
-
                 <input type="file">
+                <p class="limite">⚠️ NÃO SÃO ACEITAS IMAGENS QUE CONTENHAM DESENHOS OU TEXTOS</p>
             </div>
 
 
@@ -224,7 +224,6 @@
 
                 <p class="limite">Maximum file size: 3 MB</p>
             </div>
-
         </div>
 
 
@@ -311,7 +310,7 @@
             </div>
 
             <div class="campo">
-                <label>Sexo *</label>
+                <label>Sexo <span>*</span></label>
                 <select>
                     <option>Selecione o Sexo</option>
                     <option value="macho">Macho</option>
@@ -320,16 +319,25 @@
             </div>
 
             <div class="campo">
-                <label>Faixa Etária *</label>
-                <select>
-                    <option>Selecione a Faixa Etária</option>
+            <label for="faixa_etaria">Idade:</label>
+                    <select id="faixaEtaria" name="faixaEtaria">
+                    <option value="">Selecione</option>
+                        <option value="filhote">Filhote (até 1 ano)</option>
+                        <option value="jovem">Jovem (1 a 3 anos)</option>
+                        <option value="adulto">Adulto (3 a 7 anos)</option>
+                        <option value="senior">Sênior (7 a 12 anos)</option>
+                        <option value="geriatrico">Geriátrico (acima de 12 anos)</option>
+    </select>
                 </select>
             </div>
             
             <div class="campo">
-                <label>Porte *</label>
-                <select>
+                <label>Porte: <span>*</span></label>
+                    <select>
                     <option>Selecione o Porte</option>
+                    <option value="mini">Pequeno (até 6kg)</option>
+                    <option value="pequeno">Médio (6kg a 12kg)</option>
+                    <option value="medio">Grande (12kg a 25kg)</option>
                 </select>
             </div>
         </div>
