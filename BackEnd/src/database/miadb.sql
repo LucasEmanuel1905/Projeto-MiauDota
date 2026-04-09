@@ -40,7 +40,15 @@ vacinado BOOLEAN DEFAULT FALSE NOT NULL,
 id_usuario INT NOT NULL,
 FOREIGN KEY (id_usuario) REFERENCES usuario (id)
 );
-
+-- * @param {string} nome - Nome do gato
+-- * @param {string} raca - Raça do gato
+-- * @param {number} idade - Idade do gato
+-- * @param {string} descricao - Descrição do gato
+-- * @param {string} sexo - Sexo do gato
+-- * @param {string} porte - Porte do gato
+-- * @param {string} foto_principal - Foto principal do gato
+-- * @param {boolean} vacinado - Se o gato é vacinado
+-- * @param {number} id_usuario - ID do usuário
 
 CREATE TABLE pedido_adocao(
 id INT PRIMARY KEY AUTO_INCREMENT,

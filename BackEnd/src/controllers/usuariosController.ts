@@ -1,49 +1,60 @@
-import { Request, Response } from 'express';
-import { db } from '../database/knex.js';
+import { db } from "../database/connection.js";
+import { Request, Response } from "express";
 
-export const usuariosController = {
-    listar: async (req: Request, res: Response) => {
-        try {
-            const result = await db('usuario');
-            res.json(result);
-        } catch (e) {
-            res.status(500).send('Erro ao listar usuários');
-        }
-    },
+  export const listarUsuarios = async (req: Request, res: Response) =>{
+    try {
+    const data = await db("usuario").select("*");
+    return res.json(data);
+  } catch (e) {
+    return res.status(500).send("Erro ao listar usuários");
+  }
+};
 
-    cadastrar: async (req: Request, res: Response) => {
-        try {
-            await db('usuario').insert(req.body);
-            res.status(201).send('Usuário cadastrado!');
-        } catch (e) {
-            res.status(500).send('Erro ao cadastrar usuário');
-        }
-    },
+  export const buscarUsuario = async (req: Request, res: Response) => {
+    try {
+    const { id } = req.params;
+    const data = await db("usuario").where({ id }).first();
+    return res.json(data);
+  } catch (e) {
+    return res.status(500).send("Erro ao buscar usuário");
+  }
+};
+export const criarUsuario = async (req: Request, res: Response) => {
+  try {
+    const { nome, email, telefone, cpf, senha } = req.body;
 
-    buscarPorId: async (req: Request, res: Response) => {
-        try {
-            const result = await db('usuario').where({ id: req.params.id }).first();
-            res.json(result);
-        } catch (e) {
-            res.status(500).send('Erro ao buscar usuário');
-        }
-    },
+    const [id] = await db("usuario").insert({
+      nome,
+      email,
+      telefone,
+      cpf,
+      senha,
+    });
+  return res.json({ id });
+  
+    await db("usuario").insert(req.body);
+    return res.status(201).send("Usuário cadastrado!");
+  } catch (e) {
+    return res.status(500).send("Erro ao cadastrar usuário");
+  }
+};
 
-    atualizar: async (req: Request, res: Response) => {
-        try {
-            await db('usuario').where({ id: req.params.id }).update(req.body);
-            res.send('Atualizado!');
-        } catch (e) {
-            res.status(500).send('Erro ao atualizar usuário');
-        }
-    },
+export const atualizarUsuario = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    await db("usuario").where({ id }).update(req.body);
+    return res.send("Atualizado!");
+  } catch (e) {
+    return res.status(500).send("Erro ao atualizar usuário");
+  }
+};
 
-    excluir: async (req: Request, res: Response) => {
-        try {
-            await db('usuario').where({ id: req.params.id }).del();
-            res.send('Excluído!');
-        } catch (e) {
-            res.status(500).send('Erro ao excluir usuário');
-        }
-    }
+export const deletarUsuario = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    await db("usuario").where({ id }).delete();
+    return res.send("Excluído!");
+  } catch (e) {
+    return res.status(500).send("Erro ao excluir usuário");
+  }
 };

@@ -1,49 +1,93 @@
-import { Request, Response } from 'express';
-import { db } from '../database/knex.js';
+import {db} from "../database/connection.js";
+import { Request, Response } from "express";
+export const listarGatos = async (req: Request, res: Response) => {
+  try {
+    const gatos = await db("gato").select("*");
+    return res.json(gatos);
+  } catch (error) {
+    return res.status(500).send("Erro ao listar gatos");
+  }
+};
 
-export const gatosController = {
-    listar: async (req: Request, res: Response) => {
-        try {
-            const gatos = await db('gato').select('*');
-            res.json(gatos);
-        } catch (error) {
-            res.status(500).send('Erro ao listar gatos');
-        }
-    },
+export const listarGatosCompleto = async (req: Request, res: Response) => {
+  try {
+    const data = await db("gato")
+      .select(
+        "gato.*",
+        "usuario.nome as protetor"
+      )
+      .innerJoin("usuario", "gato.id_usuario", "usuario.id");
+    return res.json(data);
+  } catch (error) {
+    return res.status(500).send("Erro ao listar gatos completo");
+  }
+};
 
-    cadastrar: async (req: Request, res: Response) => {
-        try {
-            await db('gato').insert(req.body);
-            res.status(201).send('Gato cadastrado com sucesso!');
-        } catch (error) {
-            res.status(500).send('Erro ao cadastrar gato');
-        }
-    },
+export const buscarGato = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const gato = await db("gato").where({ id }).first();
+    return res.json(gato);
+  } catch (error) {
+    return res.status(500).send("Erro ao buscar gato");
+  }
+};
 
-    buscarPorId: async (req: Request, res: Response) => {
-        try {
-            const gato = await db('gato').where({ id: req.params.id }).first();
-            res.json(gato);
-        } catch (error) {
-            res.status(500).send('Erro ao buscar gato');
-        }
-    },
+export const criarGato = async (req: Request, res: Response) => {
+  try {
+    const { nome, raca, idade, descricao, sexo, porte, foto_principal, cadastrado, vacinado, id_usuario } = req.body;
 
-    atualizar: async (req: Request, res: Response) => {
-        try {
-            await db('gato').where({ id: req.params.id }).update(req.body);
-            res.send('Gato atualizado!');
-        } catch (error) {
-            res.status(500).send('Erro ao atualizar gato');
-        }
-    },
+    const [id] = await db("gato").insert({
+      nome,
+      raca,
+      idade,
+      descricao,
+      sexo,
+      porte,
+      foto_principal,
+      cadastrado: cadastrado || false,
+      vacinado: vacinado || false,
+      id_usuario
+    });
 
-    excluir: async (req: Request, res: Response) => {
-        try {
-            await db('gato').where({ id: req.params.id }).del();
-            res.send('Gato excluído!');
-        } catch (error) {
-            res.status(500).send('Erro ao excluir gato');
-        }
-    }
+    return res.status(201).json({ id, message: "Gato cadastrado com sucesso!" });
+  } catch (error) {
+    return res.status(500).send("Erro ao cadastrar gato");
+  }
+};
+
+export const atualizarGato = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const { nome, raca, idade, descricao, sexo, porte, foto_principal, cadastrado, vacinado, id_usuario } = req.body;
+
+    await db("gato")
+      .where({ id })
+      .update({ 
+          nome, 
+          raca, 
+          idade, 
+          descricao, 
+          sexo, 
+          porte, 
+          foto_principal, 
+          cadastrado, 
+          vacinado, 
+          id_usuario 
+      });
+
+    return res.json({ message: "Gato atualizado com sucesso!" });
+  } catch (error) {
+    return res.status(500).send("Erro ao atualizar gato");
+  }
+};
+
+export const deletarGato = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    await db("gato").where({ id }).delete();
+    return res.send("Gato excluído!");
+  } catch (error) {
+    return res.status(500).send("Erro ao excluir gato");
+  }
 };
