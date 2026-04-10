@@ -5,7 +5,8 @@ import {
   criarUsuario, 
   buscarUsuario, 
   atualizarUsuario, 
-  deletarUsuario 
+  deletarUsuario,
+  login
 } from '../controllers/usuariosController.js';
 import { 
   listarGatos, 
@@ -18,29 +19,38 @@ import {
   listarPedidos, 
   criarPedido, 
   atualizarPedido, 
-  deletarPedido 
+  deletarPedido,
+  listarPedidosPorDono
 } from '../controllers/pedidosController.js';
+import { authMiddleware } from '../middleware/auth.js';
 
 const routes = Router();
 
-// --- ROTAS DE USUÁRIOS ---
-routes.get('/usuarios', listarUsuarios);
+// --- ROTAS PÚBLICAS ---
+routes.post('/login', login);
 routes.post('/usuarios', criarUsuario);
-routes.get('/usuarios/:id', buscarUsuario);
-routes.put('/usuarios/:id', atualizarUsuario);
-routes.delete('/usuarios/:id', deletarUsuario);
-
-// --- ROTAS DE GATOS ---
 routes.get('/gatos', listarGatos);
-routes.post('/gatos', criarGato);
 routes.get('/gatos/:id', buscarGato);
-routes.put('/gatos/:id', atualizarGato);
-routes.delete('/gatos/:id', deletarGato);
+routes.post('/gatos', criarGato); // Cadastro de gato é público, mas gera o Token
 
-// --- ROTAS DE PEDIDOS DE ADOÇÃO ---
-routes.get('/pedidos', listarPedidos);
-routes.post('/pedidos', criarPedido);
-routes.patch('/pedidos/:id', atualizarPedido);
-routes.delete('/pedidos/:id', deletarPedido);
+// --- ROTAS PROTEGIDAS (Exigem Header Authorization: Bearer <TOKEN>) ---
+
+// Usuários
+routes.get('/usuarios', authMiddleware, listarUsuarios);
+routes.get('/usuarios/:id', authMiddleware, buscarUsuario);
+routes.put('/usuarios/:id', authMiddleware, atualizarUsuario);
+routes.delete('/usuarios/:id', authMiddleware, deletarUsuario);
+
+// Gatos (Edição e Exclusão)
+routes.put('/gatos/:id', authMiddleware, atualizarGato);
+routes.delete('/gatos/:id', authMiddleware, deletarGato);
+
+// Pedidos de Adoção
+routes.get('/pedidos', authMiddleware, listarPedidos);
+routes.get('/pedidos/dono/:email', authMiddleware, listarPedidosPorDono);
+routes.post('/pedidos', criarPedido); // Qualquer um pode pedir adoção
+routes.patch('/pedidos/:id', authMiddleware, atualizarPedido); // Apenas o dono do gato pode aceitar
+routes.delete('/pedidos/:id', authMiddleware, deletarPedido);
+
 
 export default routes;

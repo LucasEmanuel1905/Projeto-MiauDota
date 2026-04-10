@@ -1,5 +1,11 @@
 import {db} from "../database/connection.js";
 import { Request, Response } from "express";
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+
+dotenv.config();
+const SECRET = process.env.JWT_SECRET || 'miau_dota_secret_key_2024';
+
 export const listarGatos = async (req: Request, res: Response) => {
   try {
     const gatos = await db("gato").select("*");
@@ -35,8 +41,26 @@ export const buscarGato = async (req: Request, res: Response) => {
 
 export const criarGato = async (req: Request, res: Response) => {
   try {
-    const { nome, raca, idade, descricao, sexo, porte, foto_principal, cadastrado, vacinado, id_usuario } = req.body;
+    const { 
+      nome, raca, idade, descricao, sexo, porte, foto_principal, vacinado,
+      responsavel_nome, responsavel_email, responsavel_telefone, responsavel_cpf 
+    } = req.body;
 
+    // 1. Verifica ou cria o usuário automaticamente
+    let user = await db("usuario").where({ email: responsavel_email }).first();
+
+    if (!user) {
+      const [newUserId] = await db("usuario").insert({
+        nome: responsavel_nome,
+        email: responsavel_email,
+        telefone: responsavel_telefone,
+        cpf: responsavel_cpf,
+        senha: 'login_automatico'
+      });
+      user = { id: newUserId };
+    }
+
+    // 2. Cadastra o gato vinculado a este usuário
     const [id] = await db("gato").insert({
       nome,
       raca,
@@ -45,13 +69,21 @@ export const criarGato = async (req: Request, res: Response) => {
       sexo,
       porte,
       foto_principal,
-      cadastrado: cadastrado || false,
+      cadastrado: true,
       vacinado: vacinado || false,
-      id_usuario
+      id_usuario: user.id
     });
 
-    return res.status(201).json({ id, message: "Gato cadastrado com sucesso!" });
+    // 3. GERA O TOKEN PARA O DONO DO GATO
+    const token = jwt.sign({ id: user.id }, SECRET, { expiresIn: '7d' });
+
+    return res.status(201).json({ 
+      id, 
+      token, 
+      message: "Gato cadastrado com sucesso! Use este token para gerenciar as adoções." 
+    });
   } catch (error) {
+    console.error(error);
     return res.status(500).send("Erro ao cadastrar gato");
   }
 };
@@ -91,3 +123,5 @@ export const deletarGato = async (req: Request, res: Response) => {
     return res.status(500).send("Erro ao excluir gato");
   }
 };
+
+

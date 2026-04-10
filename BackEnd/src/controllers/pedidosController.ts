@@ -74,3 +74,27 @@ export const deletarPedido = async (req: Request, res: Response) => {
     return res.status(500).send("Erro ao excluir pedido");
   }
 };
+export const listarPedidosPorDono = async (req: Request, res: Response) => {
+  try {
+    const { email } = req.params;
+
+    const data = await db("pedido_adocao")
+      .select(
+        "pedido_adocao.id",
+        "pedido_adocao.data_horas",
+        "pedido_adocao.status",
+        "adotante.nome as adotante_nome",
+        "adotante.telefone as adotante_telefone",
+        "gato.nome as gato_nome"
+      )
+      .innerJoin("gato", "pedido_adocao.id_gato", "gato.id")
+      .innerJoin("usuario as dono", "gato.id_usuario", "dono.id")
+      .innerJoin("usuario as adotante", "pedido_adocao.id_usuario", "adotante.id")
+      .where("dono.email", email);
+
+    return res.json(data);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).send("Erro ao listar pedidos do dono");
+  }
+};
