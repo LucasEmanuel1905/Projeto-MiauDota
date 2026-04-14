@@ -25,10 +25,7 @@
                 </ul>
             </div>
         </div>
-        <div class="extras">
-            <a href="favoritos.html"><i class="bi bi-box2-heart-fill"></i></a>
-           <a href="filtar.html"> <i class="bi bi-search"></i></a>
-        </div>
+    
     </header>
 
 
@@ -38,7 +35,7 @@
 
 <main class="containerForm">
 
-    <form class="formAnimal">
+    <form class="formAnimal" id="formAnimal">
 
         <!-- Tipo de anúncio -->
         <div class="tipoAnuncio">
@@ -48,41 +45,36 @@
                 <input type="radio" name="tipo">
                 Anúncio de Adoção
             </label>
-
+            
             <label>
                 <input type="radio" name="tipo">
                 Anúncio de Procura-se
             </label>
         </div>
-
-
-        <!-- Fotos -->
-        <div class="boxFotos">
+        
+        <div class="linhaInputs">
+            <div class="campo" >
+                <label>Nome do Animal *</label>
+                <input type="text" placeholder="Inserir Nome do Gato" id="nomeAnimal">
+            </div>
+        
+        
+        <div class="boxFotos" id="fotoAnimal">
             
 
             <div class="fotoPrincipal">
                 <h2>Foto Principal *</h2>
-                <input type="file">
-                <p class="limite">⚠️ NÃO SÃO ACEITAS IMAGENS QUE CONTENHAM DESENHOS OU TEXTOS</p>
+                <input type="url">
+                <p class="limite">bote aqui a foto do gato que você está cadastrando</p>
             </div>
 
 
-            <div class="galeriaFotos">
-                <h2>Galeria de Fotos</h2>
-
-                <input type="file">
-
-                <p class="limite">Maximum file size: 3 MB</p>
-            </div>
-        </div>
-
-
-        <!-- Selects -->
+      
         <div class="linhaSelect">
 
-            <div class="campo">
+            <div class="campo" >
                 <label>Raça <span>*</span></label>
-                <select>
+                <select id="racaAnimal">
                     <option>Selecione a raça</option>
                     <option value="abyssinian">Abissínio</option>
                     <option value="aphrodite_giant">Gigante Afrodite</option>
@@ -159,16 +151,16 @@
                 </select>
             </div>
 
-            <div class="campo">
+            <div class="campo" >
                 <label>Sexo <span>*</span></label>
-                <select>
+                <select id="sexoAnimal">
                     <option>Selecione o Sexo</option>
                     <option value="macho">Macho</option>
                     <option value="femea">Femea</option>
                 </select>
             </div>
 
-            <div class="campo">
+            <div class="campo" id="idadeAnimal">
             <label for="faixa_etaria">Idade:</label>
                     <select id="faixaEtaria" name="faixaEtaria">
                     <option value="">Selecione</option>
@@ -181,9 +173,9 @@
                 </select>
             </div>
             
-            <div class="campo">
+            <div class="campo" >
                 <label>Porte: <span>*</span></label>
-                    <select>
+                    <select id="porteAnimal">
                     <option>Selecione o Porte</option>
                     <option value="mini">Pequeno (até 6kg)</option>
                     <option value="pequeno">Médio (6kg a 12kg)</option>
@@ -193,28 +185,8 @@
         </div>
         <hr>
         <!-- Linha nome -->
-        <div class="linhaInputs">
-            <div class="campo">
-                <label>Nome do Animal *</label>
-                <input type="text" placeholder="Inserir Nome do Gato">
-            </div>
-            <div class="campo">
-                <label>Responsável *</label>
-                <input type="text" placeholder="Responsável aqui">
-            </div>
-        </div>
-        <!-- Linha contato -->
-        <div class="linhaContato">
-            <div class="campo">
-                <label>E-mail do Responsável *</label>
-                <input type="email" placeholder="Inserir E-mail">
-            </div>
-            <div class="campo">
-                <label>Whatsapp do Responsável *</label>
-                <input type="text" placeholder="Inserir DDD + Número">
-                <small>Ex: 11981110022 - Apenas os DDD e Número</small>
-            </div>
-        </div>
+    <button type="submit">Enviar</button>
+        
 
     </form>
 </main>
@@ -264,5 +236,6 @@
     <div class="subfooter">
         <p><i class="bi bi-c-circle"></i>2026 MiauDota Cat Adoption. All Rights Reserved.</p>
     </div>
+    <script src="./javascript/cadastre_um_gato.js"></script>
 </body>
 </html>

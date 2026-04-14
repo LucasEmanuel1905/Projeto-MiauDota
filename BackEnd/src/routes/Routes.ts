@@ -29,14 +29,14 @@ routes.post('/login', login)
 routes.post('/registrar', registrar)
 
 // --- ROTAS DE USUÁRIOS ---
-routes.get('/usuarios', Authmeio, listarUsuarios); //role
+routes.get('/usuarios', listarUsuarios); //role
 routes.get('/usuarios/:id', buscarUsuario); //role
 routes.put('/usuarios/:id', Authmeio, atualizarUsuario);
 routes.delete('/usuarios/:id', deletarUsuario); //role
 
 // --- ROTAS DE GATOS ---
 routes.get('/gatos', listarGatos);
-routes.post('/gatos', Authmeio, criarGato);
+routes.post('/gatos',  criarGato);
 routes.get('/gatos/:id', buscarGato);
 routes.put('/gatos/:id', atualizarGato); //role
 routes.delete('/gatos/:id', deletarGato); //role

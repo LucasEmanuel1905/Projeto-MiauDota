@@ -33,12 +33,13 @@ raca ENUM("srd", "abyssinian", "aphrodite_giant", "aegean", "american_bobtail",
     "turkish_angora", "turkish_van", "ukrainian_levkoy", "york_chocolate"
 ) DEFAULT "srd",
 idade ENUM("filhote", "jovem" , "adulto", "senior", "geriatrico") NOT NULL,
-descricao TEXT NOT NULL,
+descricao TEXT,
 sexo ENUM("Macho" , "Fêmea") NOT NULL,
 porte ENUM("pequeno", "médio" , "grande") NOT NULL,
 foto_principal TEXT,  
 cadastrado BOOLEAN DEFAULT FALSE NOT NULL,
 vacinado BOOLEAN DEFAULT FALSE NOT NULL,
+castrado BOOLEAN DEFAULT FALSE NOT NULL,
 id_usuario INT NOT NULL,
 FOREIGN KEY (id_usuario) REFERENCES usuario (id)
 );
@@ -53,15 +54,48 @@ FOREIGN KEY (id_usuario) REFERENCES usuario (id),
 FOREIGN KEY (id_gato) REFERENCES gato (id)
 );
 
-SHOW DATABASES;
-SHOW TABLES;
-SHOW TABLES FROM usuario;
-SHOW TABLES FROM gato;
-SHOW TABLES FROM pedido_adocao;
-DESC usuario;
-DESC gato;
-DESC pedido_adocao;
-SELECT * FROM usuario;
-SELECT * FROM gato;
-SELECT * FROM pedido_adocao;
-SELECT * FROM gato WHERE id=1;
+INSERT INTO usuario 
+(nome, email, telefone, cpf, senha, bloqueado)
+VALUES
+('João Silva', 'joao.silva1@email.com', '11999990001', '12345678901', 'senha123', FALSE),
+
+('Maria Oliveira', 'maria.oliveira2@email.com', '11999990002', '12345678902', 'senha123', FALSE),
+
+('Carlos Souza', 'carlos.souza3@email.com', '11999990003', '12345678903', 'senha123', FALSE),
+
+('Ana Santos', 'ana.santos4@email.com', '11999990004', '12345678904', 'senha123', FALSE),
+
+('Pedro Costa', 'pedro.costa5@email.com', '11999990005', '12345678905', 'senha123', FALSE),
+
+('Juliana Lima', 'juliana.lima6@email.com', '11999990006', '12345678906', 'senha123', FALSE),
+
+('Lucas Pereira', 'lucas.pereira7@email.com', '11999990007', '12345678907', 'senha123', FALSE),
+
+('Fernanda Alves', 'fernanda.alves8@email.com', '11999990008', '12345678908', 'senha123', FALSE),
+
+('Rafael Gomes', 'rafael.gomes9@email.com', '11999990009', '12345678909', 'senha123', FALSE),
+
+('Camila Rocha', 'camila.rocha10@email.com', '11999990010', '12345678910', 'senha123', FALSE);
+
+INSERT INTO gato 
+(nome, raca, idade, descricao, sexo, porte, foto_principal, cadastrado, vacinado, id_usuario)
+VALUES
+('Bolt', 'abyssinian', 'jovem', 'Muito ativo e curioso', 'Macho', 'médio', 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131', TRUE, TRUE, 1),
+
+('Cleo', 'egyptian_mau', 'adulto', 'Elegante e observadora', 'Fêmea', 'médio', 'https://images.unsplash.com/photo-1510337550647-e84f83e341ca', TRUE, TRUE, 2),
+
+('Zeca', 'american_bobtail', 'adulto', 'Carinhoso e sociável', 'Macho', 'médio', 'https://images.unsplash.com/photo-1495360010541-f48722b34f7d', FALSE, TRUE, 3),
+
+('Maya', 'birman', 'adulto', 'Muito dócil e tranquila', 'Fêmea', 'médio', 'https://images.unsplash.com/photo-1511044568932-338cba0ad803', TRUE, TRUE, 4),
+
+('Fred', 'exotic_shorthair', 'senior', 'Calmo e gosta de dormir', 'Macho', 'pequeno', 'https://images.unsplash.com/photo-1507149833265-60c372daea22', TRUE, FALSE, 5),
+
+('Lola', 'chartreux', 'jovem', 'Silenciosa e observadora', 'Fêmea', 'médio', 'https://images.unsplash.com/photo-1516979187457-637abb4f9353', TRUE, TRUE, 6),
+
+('Apolo', 'norwegian_forest', 'adulto', 'Peludo e resistente ao frio', 'Macho', 'grande', 'https://images.unsplash.com/photo-1519052537078-e6302a4968d4', FALSE, TRUE, 7),
+
+('Kiara', 'turkish_angora', 'jovem', 'Ágil e muito esperta', 'Fêmea', 'pequeno', 'https://images.unsplash.com/photo-1517849845537-4d257902454a', TRUE, TRUE, 8),
+
+('Bruce', 'bombay', 'adulto', 'Preto e muito elegante', 'Macho', 'médio', 'https://images.unsplash.com/photo-1517423440428-a5a00ad493e8', TRUE, FALSE, 9),
+
+('Dora', 'balinese', 'filhote', 'Muito comunicativa e ativa', 'Fêmea', 'pequeno', 'https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0', TRUE, TRUE, 10);

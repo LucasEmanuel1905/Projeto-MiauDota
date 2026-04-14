@@ -35,8 +35,8 @@ export const buscarGato = async (req: Request, res: Response) => {
 
 export const criarGato = async (req: Request, res: Response) => {
   try {
-    const { nome, raca, idade, descricao, sexo, porte, foto_principal, cadastrado, vacinado, id_usuario } = req.body;
-
+    const { nome, raca, idade, descricao, sexo, porte, foto_principal, cadastrado, castrado, vacinado } = req.body;
+const id_usuario = 1
     const [id] = await db("gato").insert({
       nome,
       raca,
@@ -47,6 +47,7 @@ export const criarGato = async (req: Request, res: Response) => {
       foto_principal,
       cadastrado: cadastrado || false,
       vacinado: vacinado || false,
+      castrado: castrado || false,
       id_usuario
     });
 
