@@ -15,24 +15,32 @@ document.getElementById("formAnimal").addEventListener("submit", async (g)=> {
     const idade = document.getElementById("faixaEtaria").value
     const foto_principal = document.getElementById("fotoAnimal").value
     const descricao = document.getElementById("descricao").value
-    const vacinado = document.getElementById("animalVacinado").value
-    const castrado = document.getElementById("animalCastrado").value
+    let vacinado = document.getElementById("animalVacinado").value
+    let castrado = document.getElementById("animalCastrado").value
 
-  
+    if(vacinado == "false"){
+        vacinado = false
+    }else{
+        vacinado = true
+    }
     
+    if(castrado == "false"){
+        castrado = false
+    } else{
+        castrado = true
+    }
 
-    console.log(    { nome, raca, idade, descricao, sexo, porte, foto_principal, cadastrado, vacinado }
-);
+   
+        
     
     
-
     const response = await fetch("http://localhost:3000/gatos", {
         method: "POST",
         headers: {"Content-Type":"application/json"},
-        body: JSON.stringify( {nome, raca, idade, descricao, sexo, foto_principal, cadastrado, vacinado, castrado }
-    )
+        body: JSON.stringify( {nome, raca, idade, descricao, sexo, foto_principal, vacinado, castrado }
+        )
     })
-
+    
     
     if(response.ok){
         alert("gato cadastrado!")
@@ -42,4 +50,5 @@ document.getElementById("formAnimal").addEventListener("submit", async (g)=> {
     else{
         alert("erro ao cadastrar gato, verifique as informações")
     }
+    
 })
