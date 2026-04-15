@@ -54,8 +54,8 @@ const cadastrado = true
       sexo,
       foto_principal,
       cadastrado: cadastrado || false,
-      vacinado: vacinado || false,
       castrado: castrado || false,
+      vacinado: vacinado || false,
       id_usuario
     });
 
