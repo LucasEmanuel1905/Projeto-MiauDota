@@ -82,6 +82,8 @@ main {
     max-width: 1100px;
     margin: 4rem auto;
     padding: 0 2rem;
+    position: relative;
+    z-index: 10;
 }
 
 .titulo {
@@ -90,10 +92,19 @@ main {
 }
 
 .titulo h1 {
-    font-size: 3rem;
-    color: #562b88;
-    position: relative;
-    display: inline-block;
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    background: linear-gradient(to right, #682daa, #9c77c7, #bf88ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+    animation: fadeUp 1s ease-out;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .titulo h1::after {
@@ -116,22 +127,26 @@ main {
 }
 
 .passo {
-    background: #ffffff;
-    padding: 1.5rem 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(86, 43, 136, 0.05);
-    transition: all 0.3s ease;
+    background: rgba(250, 248, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(191, 136, 255, 0.3);
+    box-shadow: 0 25px 50px rgba(104, 45, 170, 0.08);
+    padding: 2rem 3rem;
+    border-radius: 24px;
+    transition: all 0.4s ease;
     display: flex;
-    flex-direction: row; /* Alinhado em row */
+    flex-direction: row;
     align-items: center;
     text-align: left;
-    border: 1px solid #f8f8f8;
-    gap: 2rem;
+    gap: 3rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .passo:hover {
-    transform: translateX(10px);
-    box-shadow: 0 8px 30px rgba(86, 43, 136, 0.1);
+    transform: translateY(-5px) translateX(10px);
+    box-shadow: 0 30px 60px rgba(104, 45, 170, 0.15);
     border-color: #bf88ff;
 }
 
@@ -165,10 +180,15 @@ main {
 /* Prova Social / Storytelling */
 
 .prova-social {
-    background: linear-gradient(135deg, rgba(191, 136, 255, 0.1), rgba(213, 177, 255, 0.05));
+    background: rgba(250, 248, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(191, 136, 255, 0.3);
+    box-shadow: 0 25px 50px rgba(104, 45, 170, 0.08);
     border-radius: 30px;
     padding: 4rem;
     margin-bottom: 4rem;
+    position: relative;
 }
 
 .story-container {
@@ -181,7 +201,12 @@ main {
 .story-image img {
     width: 100%;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 40px rgba(104, 45, 170, 0.2);
+    transition: transform 0.5s ease;
+}
+
+.story-image img:hover {
+    transform: scale(1.05) rotate(-2deg);
 }
 
 .story-content {
@@ -362,4 +387,159 @@ footer hr {
     font-size: 1rem;
     font-weight: 300;
     padding: 13px;
+}
+
+/* Glow Orbs & Hero Subtitle */
+.glow-orb {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(191, 136, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+    filter: blur(50px);
+    border-radius: 50%;
+    animation: floatOrb 8s infinite alternate ease-in-out;
+    z-index: -1;
+}
+
+.glow-orb-2 {
+    position: absolute;
+    bottom: 20%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(140, 93, 189, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+    filter: blur(60px);
+    border-radius: 50%;
+    animation: floatOrb 10s infinite alternate-reverse ease-in-out;
+    z-index: -1;
+}
+
+@keyframes floatOrb {
+    from { transform: translateY(0) scale(1); }
+    to { transform: translateY(50px) scale(1.1); }
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #888;
+    font-weight: 300;
+    margin: 0 auto 2rem;
+    animation: fadeUp 1.2s ease-out;
+}
+/* ---- Novas Seções (Critérios e FAQ) ---- */
+.section-title {
+    font-size: 2.5rem;
+    color: #682daa;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.criterios-section {
+    margin-bottom: 5rem;
+}
+
+.criterios-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.criterios-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.criterios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.criterio-card {
+    background: rgba(250, 248, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(191, 136, 255, 0.3);
+    box-shadow: 0 15px 30px rgba(104, 45, 170, 0.05);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: transform 0.4s ease;
+}
+
+.criterio-card:hover {
+    transform: translateY(-10px) rotate(-1deg);
+    box-shadow: 0 20px 40px rgba(104, 45, 170, 0.15);
+    border-color: #bf88ff;
+}
+
+.criterio-card i {
+    font-size: 3.5rem;
+    color: #bf88ff;
+    margin-bottom: 1rem;
+    display: inline-block;
+    filter: drop-shadow(0 0 10px rgba(191, 136, 255, 0.4));
+}
+
+.criterio-card h3 {
+    color: #562b88;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.criterio-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.faq-section {
+    margin-bottom: 5rem;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: #ffffff;
+    border: 1px solid rgba(191, 136, 255, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(104, 45, 170, 0.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 15px 30px rgba(104, 45, 170, 0.1);
+    transform: translateX(5px);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1.5rem 2rem 0.5rem;
+    background: transparent;
+}
+
+.faq-question h3 {
+    font-size: 1.2rem;
+    color: #562b88;
+    font-weight: 600;
+}
+
+.faq-question h3 i {
+    color: #bf88ff;
+    margin-right: 0.5rem;
+}
+
+.faq-answer {
+    padding: 0.5rem 2rem 1.5rem;
+    color: #666;
+    line-height: 1.6;
 }

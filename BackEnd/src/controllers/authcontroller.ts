@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { db } from "../database/connection.js";
-import jwt from 'jsonwebtoken'
-import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
 
 export const registrar = async (req: Request, res: Response) => {
   try {
@@ -35,19 +35,24 @@ export const registrar = async (req: Request, res: Response) => {
 };
 
 export const login = async (req:Request, res:Response) =>{
-    const {email,senha} = req.body
-    const usuario:any = await db("usuario").select("*").where({email}).first()
-    if(!usuario){
-        res.status(401).json({message: "usuario não encontrado"})
+    try {
+        const {email,senha} = req.body
+        const usuario:any = await db("usuario").select("*").where({email}).first()
+        if(!usuario){
+            return res.status(401).json({message: "usuario não encontrado"})
+        }
+        const senhaHash = await bcrypt.compare(senha, usuario.senha)
+        if(!senhaHash){
+            return res.status(401).json({message: "usuario não encontrado"})
+        }
+        const token = jwt.sign(
+            {id:usuario.id, email:usuario.email},
+            'miaudotasupersecreto',
+            {expiresIn:'1d'}
+        )
+        return res.status(201).json({token})
+    } catch (e: any) {
+        console.error("Erro no login:", e);
+        return res.status(500).json({message: "Erro interno no servidor ao tentar se conectar ao banco de dados."})
     }
-    const senhaHash = await bcrypt.compare(senha, usuario.senha)
-     if(!senhaHash){
-        res.status(401).json({message: "usuario não encontrado"})
-     }
-     const token = jwt.sign(
-        {id:usuario.id, email:usuario.email},
-        'miaudotasupersecreto',
-        {expiresIn:'1d'}
-     )
-     res.status(201).json({token})
 }

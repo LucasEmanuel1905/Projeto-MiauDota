@@ -84,6 +84,7 @@ header {
     cursor: pointer;
 }
 
+
 .extras svg {
     color: #ebebeb;
 }
@@ -161,7 +162,7 @@ header {
     margin: 10px;
     transition: transform 0.3s;
     overflow: hidden;
-    position: relative;
+   
     padding-bottom: 100px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 
@@ -203,7 +204,7 @@ header {
 }
 
 .card h4 {
-    position: absolute;
+
     right: 8px;
     bottom: 103px;
     font-size: 11px;
@@ -216,7 +217,6 @@ header {
 }
 
 .cards a {
-    position: absolute;
     right: 9px;
     bottom: 5px;
 }
@@ -224,7 +224,7 @@ header {
 .stats {
     color: rgba(0, 0, 0, 0.466);
     font-size: 14px;
-    position: absolute;
+   
     left: 13px;
     bottom: 45px;
 }
@@ -349,4 +349,50 @@ footer hr {
     min-width: 450px;
     scroll-snap-align: initial;
     border-radius: 10px;
+}
+
+/* --- Responsividade Geral --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+    .inicio {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .navegacao ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        margin-top: 10px;
+        padding-bottom: 1rem;
+    }
+    .content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 3rem;
+        padding-top: 3rem;
+    }
+    footer hr {
+        margin: 2rem;
+    }
+    .social {
+        gap: 2rem;
+    }
+}
+/* Modal */
+
+.modal_gatos{
+ position: absolute;
+ background-color: #682daa;
+ border:coral solid 5px;
+display: none;
+top:0;
+left: 0;
+height: 500px;
+width: 500px;
+
 }

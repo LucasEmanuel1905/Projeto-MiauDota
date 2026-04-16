@@ -75,27 +75,32 @@ VALUES
 
 ('Rafael Gomes', 'rafael.gomes9@email.com', '11999990009', '12345678909', 'senha123', FALSE),
 
-('Camila Rocha', 'camila.rocha10@email.com', '11999990010', '12345678910', 'senha123', FALSE);
+('Camila Rocha', 'camila.rocha10@email.com', '11999990010', '12345678910', 'senha123', FALSE),
+
+('Otávio Santos','05692969009@senacrs.edu.br','53984652732','05692969009','Teste1234', FALSE);
+
+('Lucas Emanuel','00000000000@senacrs.edu.br','555399477529','00000000000','Teste1234', FALSE);
+
 
 INSERT INTO gato 
 (nome, raca, idade, descricao, sexo, porte, foto_principal, cadastrado, vacinado, id_usuario)
 VALUES
 ('Bolt', 'abyssinian', 'jovem', 'Muito ativo e curioso', 'Macho', 'médio', 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131', TRUE, TRUE, 1),
 
-('Cleo', 'egyptian_mau', 'adulto', 'Elegante e observadora', 'Fêmea', 'médio', 'https://images.unsplash.com/photo-1510337550647-e84f83e341ca', TRUE, TRUE, 2),
+('Cleo', 'egyptian_mau', 'adulto', 'Elegante e observadora', 'Fêmea', 'médio', 'https://images.pexels.com/photos/7524926/pexels-photo-7524926.jpeg?_gl=1*cxjkl7*_ga*MTY1OTk2NzExMi4xNzc2MzU4NDg1*_ga_8JE65Q40S6*czE3NzYzNTg0ODQkbzEkZzEkdDE3NzYzNTg4MTMkajU5JGwwJGgw', TRUE, TRUE, 2),
 
 ('Zeca', 'american_bobtail', 'adulto', 'Carinhoso e sociável', 'Macho', 'médio', 'https://images.unsplash.com/photo-1495360010541-f48722b34f7d', FALSE, TRUE, 3),
 
-('Maya', 'birman', 'adulto', 'Muito dócil e tranquila', 'Fêmea', 'médio', 'https://images.unsplash.com/photo-1511044568932-338cba0ad803', TRUE, TRUE, 4),
+('Maya', 'birman', 'adulto', 'Muito dócil e tranquila', 'Fêmea', 'médio', 'https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?_gl=1*1m8gsgd*_ga*MTY1OTk2NzExMi4xNzc2MzU4NDg1*_ga_8JE65Q40S6*czE3NzYzNTg0ODQkbzEkZzEkdDE3NzYzNTg2NzkkajYwJGwwJGgw', TRUE, TRUE, 4),
 
-('Fred', 'exotic_shorthair', 'senior', 'Calmo e gosta de dormir', 'Macho', 'pequeno', 'https://images.unsplash.com/photo-1507149833265-60c372daea22', TRUE, FALSE, 5),
+('Fred', 'exotic_shorthair', 'senior', 'Calmo e gosta de dormir', 'Macho', 'pequeno', 'https://media.istockphoto.com/id/1361394182/photo/funny-british-shorthair-cat-portrait-looking-shocked-or-surprised.jpg?s=2048x2048&w=is&k=20&c=80OmuSCyHtOi_jqkyd4yyDjja73qPSnH3vgzRgXIIUg=', TRUE, FALSE, 5),
 
-('Lola', 'chartreux', 'jovem', 'Silenciosa e observadora', 'Fêmea', 'médio', 'https://images.unsplash.com/photo-1516979187457-637abb4f9353', TRUE, TRUE, 6),
+('Lola', 'chartreux', 'jovem', 'Silenciosa e observadora', 'Fêmea', 'médio', 'https://images.pexels.com/photos/35567060/pexels-photo-35567060.jpeg?_gl=1*1m730z0*_ga*MTY1OTk2NzExMi4xNzc2MzU4NDg1*_ga_8JE65Q40S6*czE3NzYzNTg0ODQkbzEkZzEkdDE3NzYzNTg3MDMkajM2JGwwJGgw', TRUE, TRUE, 6),
 
-('Apolo', 'norwegian_forest', 'adulto', 'Peludo e resistente ao frio', 'Macho', 'grande', 'https://images.unsplash.com/photo-1519052537078-e6302a4968d4', FALSE, TRUE, 7),
+('Apolo', 'norwegian_forest', 'adulto', 'Peludo e resistente ao frio', 'Macho', 'grande', 'https://images.pexels.com/photos/10092313/pexels-photo-10092313.jpeg?_gl=1*1ssnf9*_ga*MTY1OTk2NzExMi4xNzc2MzU4NDg1*_ga_8JE65Q40S6*czE3NzYzNTg0ODQkbzEkZzEkdDE3NzYzNTg3MjkkajEwJGwwJGgw', FALSE, TRUE, 7),
 
-('Kiara', 'turkish_angora', 'jovem', 'Ágil e muito esperta', 'Fêmea', 'pequeno', 'https://images.unsplash.com/photo-1517849845537-4d257902454a', TRUE, TRUE, 8),
+('Kirara', 'turkish_angora', 'jovem', 'Ágil e muito esperta', 'Fêmea', 'pequeno', 'https://images.pexels.com/photos/6247959/pexels-photo-6247959.jpeg?_gl=1*io2f0y*_ga*MTY1OTk2NzExMi4xNzc2MzU4NDg1*_ga_8JE65Q40S6*czE3NzYzNTg0ODQkbzEkZzEkdDE3NzYzNTg3NTIkajU5JGwwJGgw', TRUE, TRUE, 8),
 
-('Bruce', 'bombay', 'adulto', 'Preto e muito elegante', 'Macho', 'médio', 'https://images.unsplash.com/photo-1517423440428-a5a00ad493e8', TRUE, FALSE, 9),
+('Bruce', 'bombay', 'adulto', 'Preto e muito elegante', 'Macho', 'médio', 'https://media.istockphoto.com/id/2165337331/pt/foto/portrait-of-tabby-cat.jpg?s=2048x2048&w=is&k=20&c=TRFtKeNt9UfWyVtFT2qYqbcsAuGT6VpsSEdSSj5l9tw=', TRUE, FALSE, 9),
 
-('Dora', 'balinese', 'filhote', 'Muito comunicativa e ativa', 'Fêmea', 'pequeno', 'https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0', TRUE, TRUE, 10);
+('Dora', 'balinese', 'filhote', 'Muito comunicativa e ativa', 'Fêmea', 'pequeno', 'https://images.pexels.com/photos/2061057/pexels-photo-2061057.jpeg?_gl=1*5x0kx7*_ga*MTY1OTk2NzExMi4xNzc2MzU4NDg1*_ga_8JE65Q40S6*czE3NzYzNTg0ODQkbzEkZzEkdDE3NzYzNTg3NzgkajMzJGwwJGgw', TRUE, TRUE, 10);

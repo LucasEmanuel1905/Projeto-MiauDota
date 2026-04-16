@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil | MiauDota</title>
+    <link rel="stylesheet" href="./css/perfil_usuario.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="shortcut icon" href="img/logomiaudota.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="inicio">
+            <div class="logo">
+                <a href="index.html"><img src="img/logoSite.png" alt="logo MiaudotaPel"></a>
+            </div>
+            <div class="navegacao">
+                <ul>
+                    <li> <a href="como_adotar.html">Como Adotar</a></li>
+                    <li> <a href="sobre_nos.html">Sobre Nós</a></li>
+                    <li><a href="cadastre_um_gato.html">Cadastre um gato</a></li>
+                    <li><a href="perfil_usuario.html" class="active"><i class="bi bi-person-fill"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="profile-main">
+        <!-- Banner/Header do Perfil -->
+        <section class="profile-header">
+            <div class="cover-photo"></div>
+            <div class="profile-info-container">
+                <div class="profile-avatar">
+                    <img src="img/logomiaudota.png" alt="Avatar Usuário">
+                </div>
+                <div class="profile-details">
+                    <h1 class="user-name" id="user-name-display"></h1>
+                    <p class="user-phone" id="user-phone-display"><i class="bi bi-telephone-fill"></i> 
+                    </p>
+                </div>
+                <button class="btn-edit-profile" id="open-edit-modal">
+                    <i class="bi bi-pencil-square"></i> Editar Perfil
+                </button>
+                <button class="btn-logout" id="logout-btn">
+                    <i class="bi bi-box-arrow-right"></i> Sair
+                </button>
+            </div>
+            <div class="profile-bio" id="user-bio-display">
+                <p>
+        </section>
+
+        <section class="requests-grid">
+            <!-- Solicitações para meus gatos (Quem quer adotar meus gatos) -->
+            <div class="column received-requests">
+                <h2 class="column-title"><i class="bi bi-envelope-heart-fill"></i> Interessados nos Meus Gatos</h2>
+                <div class="requests-list">
+                    <!-- Card de Exemplo 1 -->
+                    <div class="request-card glass-card" data-id="req-1">
+                        <div class="cat-thumb">
+                            <img src="img/gata-luna.png" alt="Gato">
+                        </div>
+                        <div class="request-info">
+                            <h3>Luna <span>(Pedido de Maria Silva)</span></h3>
+                            <div class="tags">
+                                <span class="tag vacinado">Vacinada</span>
+                                <span class="tag castrado">Castrado</span>
+                            </div>
+                        </div>
+                        <div class="request-actions">
+                            <button class="btn-action accept" title="Aceitar"><i class="bi bi-check-lg"></i></button>
+                            <button class="btn-action decline" title="Recusar"><i class="bi bi-x-lg"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Card de Exemplo 2 -->
+                    <div class="request-card glass-card" data-id="req-2">
+                        <div class="cat-thumb">
+                            <img src="img/gato-frederico.webp" alt="Gato">
+                        </div>
+                        <div class="request-info">
+                            <h3>Frederico <span>(Pedido de João Paulo)</span></h3>
+                            <div class="tags">
+                                <span class="tag vacinado">Vacinado</span>
+                            </div>
+                        </div>
+                        <div class="request-actions">
+                            <button class="btn-action accept" title="Aceitar"><i class="bi bi-check-lg"></i></button>
+                            <button class="btn-action decline" title="Recusar"><i class="bi bi-x-lg"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meus pedidos de adoção (Gatos que eu quero adotar) -->
+            <div class="column my-applications">
+                <h2 class="column-title"><i class="bi bi-clipboard-heart-fill"></i> Minhas Candidaturas</h2>
+                <div class="requests-list">
+                    <!-- Card de Exemplo 1 (Pendente) -->
+                    <div class="application-card glass-card">
+                        <div class="app-header">
+                            <div class="cat-thumb">
+                                <img src="img/Bob.webp" alt="Gato">
+                            </div>
+                            <div class="request-info">
+                                <h3>Ronaldinho</h3>
+                                <div class="tags">
+                                    <span class="tag vacinado">Vacinado</span>
+                                    <span class="tag castrado">Castrado</span>
+                                </div>
+                            </div>
+                            <div class="status-badge pending">PENDENTE</div>
+                        </div>
+                        <div class="app-body">
+                            <p>Aguardando análise do doador...</p>
+                        </div>
+                    </div>
+
+                    <!-- Card de Exemplo 2 (Aceito) -->
+                    <div class="application-card glass-card">
+                        <div class="app-header">
+                            <div class="cat-thumb">
+                                <img src="img/Cloe.jpg" alt="Gato">
+                            </div>
+                            <div class="request-info">
+                                <h3>Cloe</h3>
+                                <div class="tags">
+                                    <span class="tag vacinado">Vacinada</span>
+                                </div>
+                            </div>
+                            <div class="status-badge accepted">ACEITO</div>
+                        </div>
+                        <div class="app-body">
+                            <p>Parabéns! O doador aceitou seu pedido. Entre em contato para combinar a retirada.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card de Exemplo 3 (Recusado) -->
+                    <div class="application-card glass-card">
+                        <div class="app-header">
+                            <div class="cat-thumb">
+                                <img src="img/gato.jpg" alt="Gato">
+                            </div>
+                            <div class="request-info">
+                                <h3>Nina</h3>
+                                <div class="tags">
+                                    <span class="tag vacinado">Vacinada</span>
+                                </div>
+                            </div>
+                            <div class="status-badge rejected">RECUSADO</div>
+                        </div>
+                        <div class="app-body">
+                            <p>Infelizmente este gatinho já encontrou outro lar ou seu perfil não atende aos requisitos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="content">
+            <div>
+                <div class="inf1">
+                    <img src="img/logoSite.png" alt="MiauDota Logo">
+                    <div class="desc">Conectando famílias amorosas <br> com companheiros miau-ravilhosos.
+                    </div>
+                    <div class="love">
+                        <h4>Adoção|Carinho|Amor</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="inf2">
+                <div class="title">
+                    <h2>Nossa Missão</h2>
+                </div>
+                <div class="desc">
+                    <p>O MiauDota é dedicado a resgatar, <br> reabilitar e encontrar novos lares para <br> gatos
+                        necessitados em nossa comunidade. <br> Junte-se a nós para fazer a diferença!</p>
+                </div>
+            </div>
+
+            <div class="contact">
+                <h2>Contate-nos</h2>
+                <p><i class="bi bi-telephone"></i> +55 53 9947-7529</p>
+                <p><i class="bi bi-envelope"></i> miaudota@gmail.com</p>
+                <p><i class="bi bi-geo-alt"></i> Endereço: Rua dos Gatos, 123 – Vila Mariana</p>
+            </div>
+        </div>
+        <hr>
+        <div class="midia">
+            <div class="social">
+                <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.facebook.com/?locale=pt_BR" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.tiktok.com/pt-BR/" target="_blank"><i class="bi bi-tiktok"></i></a>
+                <a href="https://x.com/?lang=pt" target="_blank"><i class="bi bi-twitter-x"></i></a>
+            </div>
+            <h4>@MiauDota</h4>
+        </div>
+    </footer>
+    <div class="subfooter">
+        <p><i class="bi bi-c-circle"></i>2026 MiauDota Cat Adoption. All Rights Reserved.</p>
+    </div>
+    <!-- MODAL EDITAR PERFIL -->
+    <div id="modal-edit-profile" class="modal-overlay">
+        <div class="modal-box glass-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Editar Perfil</h2>
+                    <button class="btn-close-modal" id="close-edit-modal">&times;</button>
+                </div>
+                <form id="form-edit-profile" class="modal-form">
+                    <div class="input-group">
+                        <label for="input-name">Nome Completo</label>
+                        <input type="text" id="input-name" value="Lucas Emanuel" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="input-phone">Telefone</label>
+                        <input type="text" id="input-phone" value="+55 53 9947-7529" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="input-bio">Sua Bio</label>
+                        <textarea id="input-bio"
+                            rows="4">Apaixonado por felinos e voluntário nas horas vagas. Minha missão é garantir que cada gatinho encontre um sofá quentinho e muito amor. 🐾</textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="submit" class="btn-save">Salvar Alterações</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE SUCESSO (Ação concluída) -->
+    <div id="modal-success-action" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-content">
+                <div class="modal-icon">
+                    <div class="icon-background"></div>
+                    <i class="bi bi-check2-circle fill-icon"></i>
+                </div>
+                <h2 id="success-title">Ação Realizada!</h2>
+                <p id="success-message">A solicitação foi processada com sucesso.</p>
+                <div class="modal-actions">
+                    <button class="btn-modal" onclick="closeSuccessModal()">Entendido <i
+                            class="bi bi-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="javascript/perfil_usuario.js"></script>
+    <script src="javascript/auth_check.js"></script>
+</body>
+
+</html>
