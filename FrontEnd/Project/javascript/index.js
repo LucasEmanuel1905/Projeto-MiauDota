@@ -15,7 +15,7 @@ function abrirModal(foto_principal, nome, descricao, idade, sexo, vacinado, cast
     document.querySelector(".castrado").innerHTML = castrado
     document.querySelector(".raca").innerHTML = raca
 
-    modal.showModal()
+  
 }
 
 // fecharPop.onclick = function(){
