@@ -383,3 +383,16 @@ footer hr {
         gap: 2rem;
     }
 }
+/* Modal */
+
+.modal_gatos{
+ position: absolute;
+ background-color: #682daa;
+ border:coral solid 5px;
+display: none;
+top:0;
+left: 0;
+height: 500px;
+width: 500px;
+
+}
