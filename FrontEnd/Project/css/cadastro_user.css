@@ -92,7 +92,17 @@ img{
     padding: 15px;
     border: none;
     border-radius: 12px;
-    background-color: #e0e0e0;
+    background-color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #7f4db8;
+}
+.cadastro-form .input-box [type="email"]{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background-color: #ffffff;
     font-size: 16px;
     outline: none;
     border: 1px solid #7f4db8;

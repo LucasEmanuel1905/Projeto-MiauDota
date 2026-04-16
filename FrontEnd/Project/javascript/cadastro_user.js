@@ -14,5 +14,5 @@ form.addEventListener('submit', function(event) {
 // Função para fechar e redirecionar
 function fecharModal() {
     modal.style.display = 'none';
-    window.location.href = "login_user.html"; // Redireciona para o login
+    window.location.href = "login_user.html"; // Redireciona para a página principal
 }

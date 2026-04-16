@@ -17,7 +17,7 @@
             <nav class="navegacao">
                 <ul>
                     <li><a href="como_adotar.html">Como Adotar</a></li>
-                    <li><a href="#sobreNos">Sobre Nós</a></li>
+                    <li> <a href="sobre_nos.html">Sobre Nós</a></li>
                     <li><a href="cadastre_um_gato.html">Cadastre um gato</a></li>
                 </ul>
             </nav>
@@ -26,10 +26,10 @@
 
     <main class="login-page">
         <section class="form-container">
-            <img src="/FrontEnd/Project/img/logomiaudota.png" alt="">
+            <a href="index.html"><img src="/FrontEnd/Project/img/logomiaudota.png" alt="Logo MiauDota"></a>
             <form class="cadastro-form">
                 <div class="input-box">
-                    <input type="email" placeholder="Email" required>
+                    <input type="email" placeholder="Email" id="email" required>
                 </div>
                 
                 <div class="input-box">
@@ -88,5 +88,24 @@
     <div class="subfooter">
         <p><i class="bi bi-c-circle"></i> 2026 MiauDota Cat Adoption. All Rights Reserved.</p>
     </div>
+
+    <!-- MODAL DE LOGIN -->
+    <div id="modal-login-sucesso" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-content">
+                <div class="modal-icon">
+                    <div class="icon-background"></div>
+                    <i class="bi bi-check2-circle fill-icon"></i>
+                </div>
+                <h2>Login Realizado!</h2>
+                <p>Bem-vindo de volta ao <strong>MiauDota</strong>.<br>Vamos encontrar o seu melhor amigo!</p>
+                <div class="modal-actions">
+                    <button class="btn-modal" onclick="fecharModalLogin()">Entrar <i class="bi bi-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="javascript/login_user.js"></script>
 </body>
 </html>

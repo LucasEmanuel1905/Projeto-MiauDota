@@ -209,3 +209,40 @@ button[type="submit"]:hover {
 button[type="submit"]:active {
   transform: scale(0.95);     /* Encolhe levemente ao clicar */
 }
+
+/* --- Responsividade Geral --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+    .inicio {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .navegacao ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        margin-top: 10px;
+        padding-bottom: 1rem;
+    }
+    .content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 3rem;
+        padding-top: 3rem;
+    }
+    footer hr {
+        margin: 2rem;
+    }
+    .social {
+        gap: 2rem;
+    }
+    .form-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

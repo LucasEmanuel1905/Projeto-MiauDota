@@ -5,7 +5,7 @@ const modal = document.querySelector("dialog")
 const fecharPop = document.querySelector(".fechadorDeModal")
 
 
-function abrirModal(foto_principal,nome,descricao,idade,sexo,vacinado,castrado,raca){
+function abrirModal(foto_principal, nome, descricao, idade, sexo, vacinado, castrado, raca) {
     document.querySelector(".modal-img").src = foto_principal
     document.querySelector(".modal-titulo").innerHTML = nome
     document.querySelector(".desc").innerHTML = descricao
@@ -27,13 +27,13 @@ async function carregarGatos() {
     const data = await response.json()
     const select = document.getElementById("cards")
     console.log(select);
-    
+
     // select.innerHTML = data.map(g => `<h2> =${g.nome}</h2> <dialog><p class="raca">=${g.raca}</p></dialog>,
     //  <h4>=${g.idade}</h4> <dialog><p>=${g.descricao}</p></dialog>, <dialog><p class="sexo">=${g.sexo}</p></dialog>,
     //  <dialog><img class="modal-img"=${g.foto_principal}>,<dialog><p class="vacinado">=${g.vacinado}</p></dialog>, <dialog><p class="castrado">= ${g.castrado}</p></dialog>`
     // ).join("")
     console.log(data);
-    
+
     select.innerHTML = data.map(g => `
                         <div class="card">
                     <img src="${g.foto_principal}" alt="gato filhote tricolor">

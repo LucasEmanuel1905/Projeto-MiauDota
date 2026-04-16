@@ -75,7 +75,12 @@ VALUES
 
 ('Rafael Gomes', 'rafael.gomes9@email.com', '11999990009', '12345678909', 'senha123', FALSE),
 
-('Camila Rocha', 'camila.rocha10@email.com', '11999990010', '12345678910', 'senha123', FALSE);
+('Camila Rocha', 'camila.rocha10@email.com', '11999990010', '12345678910', 'senha123', FALSE),
+
+('Otávio Santos','05692969009@senacrs.edu.br','53984652732','05692969009','Teste1234', FALSE);
+
+('Lucas Emanuel','00000000000@senacrs.edu.br','555399477529','00000000000','Teste1234', FALSE);
+
 
 INSERT INTO gato 
 (nome, raca, idade, descricao, sexo, porte, foto_principal, cadastrado, vacinado, id_usuario)
