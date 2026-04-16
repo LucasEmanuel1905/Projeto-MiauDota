@@ -45,3 +45,15 @@ Esta apresentação foca na experiência do usuário, na interface visual e na l
 *   **O que:** Layout fluído que se ajusta automaticamente ao tamanho da tela.
 *   **Como:** Utilizando `Flexbox`, `Grid Layout` e `Media Queries` no CSS para reorganizar os elementos conforme a largura diminuir.
 *   **Onde:** Definido globalmente nos arquivos de CSS dentro da pasta `FrontEnd/Project/css`.
+
+## 🧠 8. Psicologia das Formas e Design
+*   **Porque:** Formas geométricas influenciam subconscientemente o humor e a percepção de confiança do usuário na plataforma.
+*   **O que:** Predomínio de formas orgânicas e arredondadas (Círculos e Retângulos Suaves).
+*   **Como:** Usando `border-radius: 20px` ou mais para criar um ambiente acolhedor e menos "afiado/rígido".
+*   **Onde:** Nos botões, cartões de gatos e caixas de texto de todo o sistema.
+
+## 🎨 9. Princípios de Design (UI/UX)
+*   **Porque:** Para criar uma hierarquia visual clara que guie o usuário para a ação principal: Adotar um gatinho.
+*   **O que:** Contraste, Espaçamento (Whitespace) e Equilíbrio Visual.
+*   **Como:** Aplicando margens generosas entre os cards e utilizando o Roxo Vibrante apenas em elementos de conversão (CTAs).
+*   **Onde:** Especialmente na Home (`index.html`) e no fluxo de registro de animais.
